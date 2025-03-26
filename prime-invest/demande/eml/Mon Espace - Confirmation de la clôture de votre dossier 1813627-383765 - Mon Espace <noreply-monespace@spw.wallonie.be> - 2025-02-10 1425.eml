@@ -1,0 +1,111 @@
+Delivered-To: eric@datalayer.io
+Received: by 2002:a05:6214:f25:b0:6df:ae2f:fc14 with SMTP id iw5csp1910476qvb;
+        Mon, 10 Feb 2025 05:25:45 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHySz7up6KBSZbCNGUPy7SEBruqQJlSmuA84+FUdk3b3IPrAlWQKp5hhflXpYsh7EPXHXZC
+X-Received: by 2002:a17:907:9616:b0:ab7:86ae:4bb8 with SMTP id a640c23a62f3a-ab789ada447mr1327643566b.23.1739193945204;
+        Mon, 10 Feb 2025 05:25:45 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1739193945; cv=none;
+        d=google.com; s=arc-20240605;
+        b=OLONGP69jbvQvJweVB1P+CbvL4ieGmy4kGyBzD1FL7VtpN1fFWZMb4AbPmsOMletvq
+         MV+UiBQgMW2UHG2nbM9SZpucKLMfDz0W0jvDqHKLTaQAXYxGYLXpDvSOcS7FttvJEsHI
+         OFzbWsdsddALAhTcPtkipHXYtjQABd1RrabdALwbrpRKtmJSnIZrtinAQ7ZuM+MkpDYe
+         ZeXc9nyX342EqBtOJ84d+8eZ541iggrU3yhJJyF03Cd1YpX4oHJqBpqtl6hHgWSDgufp
+         npTcnFtfgItHg6WFNGbI3gtNLRi7Xj8ZR2aSzUKCaXLbr6dG2yyppD97w6JIOc0fbCut
+         w5+A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:to:from:date:dkim-signature:message-id;
+        bh=tjoC2all71wKrmgJmQ5yURs/IJCxGb2DMFoq1fFh1k4=;
+        fh=LyThQ0luxQrBELt0rG4jIcLm4VJT36Dh7/LEig2aTvY=;
+        b=BzeR6G35523pCFfSv7ZuhkpFP6sMiM3nAgRQfdv625tKnDIYwgbywSpRoF6PG9S4od
+         bf4gX3h1ogNCazFuuMvfc9yIsJZg38EGxPzcBEma5866yJruv2vTG219wmJtLKwvjhqk
+         cUnyKChUn67UB3Vi6h04ppUkTXrz8xInPvNogaL0KuMCBueXC+9R40lc16hK6YR69P2y
+         szWBz/YVu/VmI13eEeqObVX7a0LmrrKR1IfaG0/jv4KzeWFhwdvEgzuzS6PnXXHaEuIE
+         pMaT9eamxblqvYJQXLW+y4S30dTvs7VnJDLGofhyjCXetARNls7UmJDWziJF8dnRwq3C
+         0hhw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@wallonie.be header.s=S01 header.b=RjB1c4JO;
+       spf=pass (google.com: domain of noreply-monespace@spw.wallonie.be designates 157.164.187.87 as permitted sender) smtp.mailfrom=noreply-monespace@spw.wallonie.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=spw.wallonie.be
+Return-Path: <noreply-monespace@spw.wallonie.be>
+Received: from smtp87.wallonie.be (smtp87.wallonie.be. [157.164.187.87])
+        by mx.google.com with ESMTPS id a640c23a62f3a-ab7c11519d5si160204866b.700.2025.02.10.05.25.44
+        for <eric@datalayer.io>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Mon, 10 Feb 2025 05:25:45 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply-monespace@spw.wallonie.be designates 157.164.187.87 as permitted sender) client-ip=157.164.187.87;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@wallonie.be header.s=S01 header.b=RjB1c4JO;
+       spf=pass (google.com: domain of noreply-monespace@spw.wallonie.be designates 157.164.187.87 as permitted sender) smtp.mailfrom=noreply-monespace@spw.wallonie.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=spw.wallonie.be
+Message-ID: <67a9fe59.170a0220.2637d1.c417SMTPIN_ADDED_MISSING@mx.google.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=wallonie.be; s=S01;
+  h=from:to:subject:mime-version:date;
+  bh=tjoC2all71wKrmgJmQ5yURs/IJCxGb2DMFoq1fFh1k4=;
+  b=RjB1c4JOGPaiZgLje+FX02yRq3mYN20Z/4uygYi63MgHkjXB8s8zg7u8
+   cIOggihR1ZNVLLI0/UuuT/v1mo3HSV4BDVHot9fKGSgHG/vBxXAJ1z7+q
+   8YJIx83e1s++I5NBr2UES1Ls3gm9/yL855TVw4xuj9hjd7O1DgtRNXeBr
+   U/Nu8XfVD8MY7x3SFC9XSJ2YAX6nHAdDcLG4c2hTE0kYewAve8WF+6y6i
+   hKBYDFBr+nn2IwFG+a26WZJ0CNTMUvh7RvrzePEq8YhHuCKeYjZnzwENP
+   3q+3PqjhoDtrtP5Z6RmOTVuFnlHZyZPCESA6dg5iQzvRcRPPH3rSTsqmD
+   Q==;
+X-CSE-ConnectionGUID: ST/aUaKSQBuD9Vpf+94NNQ==
+X-CSE-MsgGUID: d3RX64RHSlGLifmtIrOJmg==
+Date: 10 Feb 2025 14:25:44 +0100
+X-SenderGroup: PROD_DEFAULT
+From: Mon Espace <noreply-monespace@spw.wallonie.be>
+To: DATALAYER <eric@datalayer.io>
+Subject: =?UTF8?Q?Mon_Espace_-_Confirmation_de_la_cl=C3=B4?=
+ =?UTF8?Q?ture_de_votre_dossier_1813627-383765?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4460_433164032.1739193944490"
+
+------=_Part_4460_433164032.1739193944490
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+=09=09=09=09=09=09<p>Bonjour,</p>
+=09=09=09=09<p><br></p>
+=09=09=09=09=09<p>L'=C3=A9tape de r=C3=A9ception de votre dossier <span sty=
+le=3D"color:#000000;"><strong>Aide =C3=A0 l'investissement - Demande d'auto=
+risation de d=C3=A9buter un programme d'investissement</strong></span> est =
+d=C3=A9sormais cl=C3=B4tur=C3=A9e. </p>
+=09=09=09=09<ul>
+=09=09=09<li>Num=C3=A9ro de dossier : <span style=3D"color:#000000;">181362=
+7-383765</span></li>
+=09=09=09=09=09=09=09=09</ul>
+=09=09=09=09=09=09<p><br></p>
+=09=09=09=09=09<p>L'administration va d=C3=A8s =C3=A0 pr=C3=A9sent d=C3=A9b=
+uter l'analyse d=C3=A9taill=C3=A9e de votre demande.</p>
+=09=09<p>S'il s'av=C3=A8re que des informations compl=C3=A9mentaires soient=
+ n=C3=A9cessaires pour l'analyse, l'administration privil=C3=A9giera les <u=
+>=C3=A9changes par email ou t=C3=A9l=C3=A9phone.</u> </p>
+=09=09<p>La recevabilit=C3=A9 de votre demande vous sera communiqu=C3=A9e p=
+ar courrier postal.</p>
+=09=09<p>Si vous d=C3=A9sirez plus d'information, contactez la cellule des =
+Autorisations de d=C3=A9buter (DPI) </p>
+<ul>
+=09=09<li>T=C3=A9l : 081 33 37 33 - Fax : 081 33 39 66 (permanences t=C3=A9=
+l=C3=A9phoniques de 9 =C3=A0 12h) </li>
+<li>E-mail : dpi@spw.wallonie.be</li>
+</ul>
+=09=09=09=09<p><br></p>
+=09=09<p>Cordialement,</p>
+=09=09<p>L'=C3=A9quipe Mon Espace</p>
+=09=09
+=09=09<p style=3D"font-size: 80%;">Besoin d'aide ?</p>
+=09=09<ul>
+=09=09=09<li style=3D"font-size: 80%;">Une question sur votre dossier ?  Co=
+ntactez l'administration comp=C3=A9tente</li>
+=09=09=09<li style=3D"font-size: 80%;">Un probl=C3=A8me technique sur Mon E=
+space ?  Contactez le helpdesk au num=C3=A9ro 078 79 01 02 ou via l'adresse=
+ e-mail <a>aideenligne@wallonie.be</a></p>
+=09=09</ul>
+=09=09<p style=3D"font-size: 80%;">Cet e-mail vous a =C3=A9t=C3=A9 envoy=C3=
+=A9 automatiquement par <a data-cke-saved-href=3D"https://monespace.walloni=
+e.be/" href=3D"https://monespace.wallonie.be/">Mon Espace</a>. Merci de ne =
+pas y r=C3=A9pondre.</p>=20
+=09
+------=_Part_4460_433164032.1739193944490--
