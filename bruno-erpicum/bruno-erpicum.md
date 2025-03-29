@@ -29,9 +29,9 @@
 
 - https://studioaura.be
 
-- Corentin Dautricourt, ir. Architecte UCLouvain 2005 +32 485/45.47.01 https://erpicum.org/team/corentin-dautricourt cd@studioaura.be
+- Gauthier Van den Berghe gvdb@studioaura.be Architecte ISA St-Luc Bruxelles 2007 https://erpicum.org/team/gauthier-van-den-berghe gvdb@erpicum.org
 
-- Gauthier Van den Berghe, Architecte ISA St-Luc Bruxelles 2007 https://erpicum.org/team/gauthier-van-den-berghe gvdb@erpicum.org
+- Corentin Dautricourt cd@studioaura.be ir. Architecte UCLouvain 2005 +32 485/45.47.01 https://erpicum.org/team/corentin-dautricourt 
 
 - Loraine Beuvens, Architecte ISA Lambert Lombard 2003 https://erpicum.org/team/loraine-beuvens lb@erpicum.org
 
