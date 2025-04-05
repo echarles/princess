@@ -10,3 +10,4 @@
 - François Charlier https://www.francoischarlier.be
 - Ferrard https://ferrard.be
 - Kevin Regout https://www.kevinregout.be
+- Vitalis https://www.vitalistuin.be/fr
