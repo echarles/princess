@@ -1,6 +1,6 @@
 ## Bruno Erpicum
 
-- Erpicum
+## Erpicum
 
 - https://erpicum.org
 - https://erpicum.org/architecture
